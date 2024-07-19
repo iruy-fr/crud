@@ -59,6 +59,13 @@
             return $this->execute($query);
         }
 
+        public function update($where, $values){
+            $fields = array_keys($values);
+            $query = 'UPDATE '.$this->table.' SET '.implode
+            ('=?',$fields).' WHERE id =';
+
+        }
+
         public function delete($where){
             //monta a query
             $query = 'DELETE FROM '.$this->table.' WHERE '.$where;

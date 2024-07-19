@@ -17,10 +17,10 @@
                         <td>'.$projeto->id.'</td>
                         <td>'.$projeto->titulo.'</td>
                         <td>'.$projeto->descricao.'</td>
-                        <td>'.($projeto->ativo=='s' ? 'Ativo' : 'Inativo').'</td>
+                        <td>'.($projeto->status=='s' ? 'Ativo' : 'Inativo').'</td>
                         <td>'.date('d/m/Y', strtotime($projeto->data)).'</td>
                         <td>
-                            <a href="editar.php" class="btn btn-primary">Editar</a>
+                            <a href="editar.php?id='.$projeto->id.'" class="btn btn-primary">Editar</a>
                             <a href="excluir.php?id='.$projeto->id.'" class="btn btn-danger">Excluir</a>
                         </td>
                       </tr>';        

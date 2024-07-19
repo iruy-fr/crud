@@ -21,9 +21,19 @@
             $this->id = $objDatabase->insert([
                 'titulo' => $this->titulo,
                 'descricao' => $this->descricao,
-                'ativo' => $this->status,
+                'status' => $this->status,
                 'data' => $this->data
             ]);
+        }
+        public function atualizar(){
+            return (new Database('projetos'))->update(
+                'id = '.$this->id,
+                [
+                'titulo = ' => $this->titulo,
+                'descricao = ' => $this->descricao,
+                'status = ' => $this->status
+                ]
+            );
         }
 
         public function excluir(){

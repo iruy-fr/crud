@@ -10,23 +10,23 @@
     <form method="post">
         <div class="form-group">
             <label>Título</label>
-            <input class="form-control" type="text" name="titulo" required>
+            <input class="form-control" type="text" name="titulo" value = "<?=$objProjeto->titulo?>" required>
         </div>
         <div class="form-group">
             <label>Descrição</label>
-            <textarea class="form-control" name="descricao" required></textarea>
+            <textarea class="form-control" name="descricao" required><?=$objProjeto->descricao?></textarea>
         </div>
         <div class="form-group">
             <label>Status</label>
             <div>
                 <div class="form-check form-check-inline">
                     <label class="form-group">
-                        <input type="radio" name="ativo" value="s" required> Ativo
+                        <input type="radio" name="status" value="s" required checked> status
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
                     <label class="form-group">
-                        <input type="radio" name="ativo" value="n" required> Inativo
+                        <input type="radio" name="status" value="n" required<?=$objProjeto->status=='n' ? 'checked' : ''?>> Instatus
                     </label>
                 </div>
             </div>
